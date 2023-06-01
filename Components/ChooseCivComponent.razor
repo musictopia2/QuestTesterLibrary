@@ -1,0 +1,18 @@
+﻿@if (DataContext == null)
+{
+    return;
+}
+@if (DataContext.Civilizations.Count == 0)
+{
+    <p>Loading......</p>
+    return;
+}
+<div style="margin: 5px;">
+    <ComboBoxGenericList ItemList="DataContext.Civilizations!"
+                         TValue="CivilizationBasicModel"
+                         Style="_autos"
+                         RetrieveValue="(item) => item.FullName"
+                         @ref="_combo"
+                         @bind-Value="DataContext.CivilizationChosen"
+                         ComboEnterPressed="() => OnComboEnterAsync()" />
+</div>
