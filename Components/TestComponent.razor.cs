@@ -27,6 +27,7 @@ public partial class TestComponent
     private void ChoseCivAsync(CivilizationBasicModel civ)
     {
         DataContext.CivilizationChosen = civ; //hopefully this simple this time.
+        GlobalCivClass.CivChosen = civ;
         ChoseCiv.InvokeAsync();
     }
     [Parameter]

@@ -24,3 +24,4 @@ global using QuestTesterLibrary.Extensions;
 global using tt1 = QuestTesterLibrary.Helpers.TestTechPathClass;
 global using QuestTesterLibrary.TestServices;
 global using gg1 = AOEOBasicDataLibrary.Civs.Helpers.GlobalCivHelperClass;
+global using QuestTesterLibrary.Helpers;
