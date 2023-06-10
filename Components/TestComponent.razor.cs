@@ -21,13 +21,14 @@ public partial class TestComponent
         {
             await DataContext.InitAsync();
             DataContext.CivilizationChosen = DataContext.Civilizations.Single(x => x.Abbreviation == CivAbbAlone);
+            GlobalCivClass.CivChosen = DataContext.CivilizationChosen;
             await ChoseCiv.InvokeAsync();
         }
     }
     private void ChoseCivAsync(CivilizationBasicModel civ)
     {
         DataContext.CivilizationChosen = civ; //hopefully this simple this time.
-        GlobalCivClass.CivChosen = civ;
+        GlobalCivClass.CivChosen = DataContext.CivilizationChosen;
         ChoseCiv.InvokeAsync();
     }
     [Parameter]
