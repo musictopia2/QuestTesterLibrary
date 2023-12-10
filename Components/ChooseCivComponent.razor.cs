@@ -1,6 +1,7 @@
 namespace QuestTesterLibrary.Components;
 public partial class ChooseCivComponent
 {
+    public static Func<BasicList<CivilizationBasicModel>, BasicList<CivilizationBasicModel>>? FilterAction { get; set; }
     [Inject]
     private IChooseCivViewModel? DataContext { get; set; }
     [Parameter]
@@ -12,6 +13,10 @@ public partial class ChooseCivComponent
         _autos.Width = "90vw"; //try this way (?)
         _autos.Height = "50vh";
         await DataContext!.InitAsync();
+        if (FilterAction is not null)
+        {
+            DataContext.Civilizations = FilterAction.Invoke(DataContext.Civilizations);
+        }
     }
     private ComboBoxGenericList<CivilizationBasicModel>? _combo;
     private bool _focused;
