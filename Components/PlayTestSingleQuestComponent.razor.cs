@@ -1,5 +1,5 @@
 namespace QuestTesterLibrary.Components;
-public partial class PlayQuestComponent
+public partial class PlayTestSingleQuestComponent
 {
     [Inject]
     [AllowNull]
