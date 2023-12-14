@@ -1,3 +1,6 @@
+
+using QuestTesterLibrary.LocatorServices;
+
 namespace QuestTesterLibrary.Components;
 public partial class PlayTestSingleQuestComponent
 {

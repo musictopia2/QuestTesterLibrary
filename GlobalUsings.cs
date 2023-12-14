@@ -1,15 +1,13 @@
-﻿global using AOEOBasicDataLibrary.Civs.ViewModels;
+﻿global using AOEOCivilizationLibrary.ViewModels;
 global using BasicBlazorLibrary.Components.AutoCompleteHelpers;
 global using BasicBlazorLibrary.Components.ComboTextboxes;
 global using CommonBasicLibraries.BasicDataSettingsAndProcesses;
 global using Microsoft.AspNetCore.Components;
-global using AOEOBasicDataLibrary.TestUtilities;
-global using AOEOBasicDataLibrary.ViewModels;
 global using System.Diagnostics.CodeAnalysis;
-global using AOEOBasicDataLibrary.Civs.DataServices;
+global using AOEOCivilizationLibrary.DataServices;
 global using AOEOBasicDataLibrary.Services;
 global using Microsoft.Extensions.DependencyInjection;
-global using AOEOBasicDataLibrary.Civs.Models;
+global using AOEOCivilizationLibrary.Models;
 global using dd1 = AOEOBasicDataLibrary.Helpers.BasicGameLocationHelpers;
 global using ff1 = CommonBasicLibraries.AdvancedGeneralFunctionsAndProcesses.FileFunctions.FileFunctions;
 global using CommonBasicLibraries.AdvancedGeneralFunctionsAndProcesses.HtmlParserClasses;
@@ -23,5 +21,7 @@ global using CommonBasicLibraries.AdvancedGeneralFunctionsAndProcesses.BasicExte
 global using QuestTesterLibrary.Extensions;
 global using tt1 = QuestTesterLibrary.Helpers.TestTechPathClass;
 global using QuestTesterLibrary.TestServices;
-global using gg1 = AOEOBasicDataLibrary.Civs.Helpers.GlobalCivHelperClass;
+global using gg1 = AOEOCivilizationLibrary.Helpers.GlobalCivHelperClass;
 global using QuestTesterLibrary.Helpers;
+global using QuestTesterLibrary.ViewModels;
+global using QuestTesterLibrary.LocatorServices;

@@ -22,7 +22,7 @@ public static class ServiceExtensions
     }
     public static IServiceCollection RegisterBasicsForTesting(this IServiceCollection services)
     {
-        CheckUp();   
+        CheckUp();
         services.AddSingleton<IChooseCivViewModel, ChooseCivViewModel>()
             .AddSingleton<ICivilizationDataService, InMemoryCivilizationDataService>()
             .AddSingleton<IPlayQuestViewModel, TestPlayQuestViewModel>()
