@@ -1,11 +1,10 @@
-﻿<MenuComponent Title="@Title"
-               HasBack="HasBack"
-               BackClicked="BackClicked"
-               >
+﻿<SimpleNavigationBar Title="@Title"
+                     HasBack="HasBack"
+                     BackClicked="BackClicked">
     @if (DataContext.CivilizationChosen is null)
     {
         <ChooseCivComponent ChoseCiv="ChoseCivAsync" />
         return;
     }
     @ChildContent
-</MenuComponent>
+</SimpleNavigationBar>
