@@ -22,15 +22,25 @@ public static class ServiceExtensions
     }
     public static IServiceCollection RegisterBasicsForTesting(this IServiceCollection services)
     {
+        services.RegisterBasicsForTesting(services =>
+        {
+            services.AddSingleton<IPlayQuestViewModel, TestPlayQuestViewModel>()
+            .AddSingleton<ITechBusinessService, TechBusinessService>();
+        });
+        return services;
+    }
+    //this means if i choose not to use the default implementation, then can do something else (to accomodate testing single champion mode quests).  later can rethink.  if i improve, can do as well.
+    public static IServiceCollection RegisterBasicsForTesting(this IServiceCollection services, Action<IServiceCollection> others)
+    {
         CheckUp();
         services.AddSingleton<IChooseCivViewModel, ChooseCivViewModel>()
             .AddSingleton<ICivilizationDataService, InMemoryCivilizationDataService>()
-            .AddSingleton<IPlayQuestViewModel, TestPlayQuestViewModel>()
-            .AddSingleton<ICharacterBusinessService, CharacterBusinessService>()
             .AddSingleton<IPlayQuestService, PlayQuestService>()
-            .AddSingleton<ITechBusinessService, TechBusinessService>();
+            .AddSingleton<ICharacterBusinessService, CharacterBusinessService>();
+        others.Invoke(services);
         return services;
     }
+    //if i want other services, just add a new IQuestLocatorService.
     public static IServiceCollection RegisterTestQuestFinestHorrorServices(this IServiceCollection services)
     {
         services.RegisterBasicsForTesting()
