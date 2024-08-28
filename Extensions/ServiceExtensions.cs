@@ -22,6 +22,7 @@ public static class ServiceExtensions
     }
     public static IServiceCollection RegisterBasicsForTesting(this IServiceCollection services)
     {
+        CheckUp(); //no need for milestones, etc.  so here instead. if the registering of tests does even involve techs.
         services.RegisterBasicsForTesting(services =>
         {
             services.AddSingleton<IPlayQuestViewModel, TestPlayQuestViewModel>()
@@ -32,7 +33,6 @@ public static class ServiceExtensions
     //this means if i choose not to use the default implementation, then can do something else (to accomodate testing single champion mode quests).  later can rethink.  if i improve, can do as well.
     public static IServiceCollection RegisterBasicsForTesting(this IServiceCollection services, Action<IServiceCollection> others)
     {
-        CheckUp();
         services.AddSingleton<IChooseCivViewModel, ChooseCivViewModel>()
             .AddSingleton<ICivilizationDataService, InMemoryCivilizationDataService>()
             .AddSingleton<IPlayQuestService, PlayQuestService>()
