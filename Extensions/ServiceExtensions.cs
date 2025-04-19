@@ -36,7 +36,9 @@ public static class ServiceExtensions
         services.AddSingleton<IChooseCivViewModel, ChooseCivViewModel>()
             .AddSingleton<ICivilizationDataService, InMemoryCivilizationDataService>()
             .AddSingleton<IPlayQuestService, PlayQuestService>()
-            .AddSingleton<ICharacterBusinessService, CharacterBusinessService>();
+            .AddSingleton<ICharacterBusinessService, CharacterBusinessService>()
+            .AddSingleton<ICivilizationContext, CivilizationContext>()
+            ;
         others.Invoke(services);
         return services;
     }
