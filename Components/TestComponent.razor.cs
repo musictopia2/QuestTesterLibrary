@@ -4,6 +4,9 @@ public partial class TestComponent
     [Inject]
     [AllowNull]
     private IChooseCivViewModel DataContext { get; set; }
+    [Inject]
+    [AllowNull]
+    private ICivilizationContext CivContext { get; set; }
     [Parameter]
     [AllowNull]
     public RenderFragment ChildContent { get; set; }
@@ -21,14 +24,14 @@ public partial class TestComponent
         {
             await DataContext.InitAsync();
             DataContext.CivilizationChosen = DataContext.Civilizations.Single(x => x.Abbreviation == CivAbbAlone);
-            GlobalCivClass.CivChosen = DataContext.CivilizationChosen;
+            CivContext.CurrentCivilization = DataContext.CivilizationChosen;
             await ChoseCiv.InvokeAsync();
         }
     }
     private void ChoseCivAsync(CivilizationBasicModel civ)
     {
         DataContext.CivilizationChosen = civ; //hopefully this simple this time.
-        GlobalCivClass.CivChosen = DataContext.CivilizationChosen;
+        CivContext.CurrentCivilization = DataContext.CivilizationChosen;
         ChoseCiv.InvokeAsync();
     }
     [Parameter]

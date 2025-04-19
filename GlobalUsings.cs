@@ -25,3 +25,4 @@ global using gg1 = AOEOCivilizationLibrary.Helpers.GlobalCivHelperClass;
 global using QuestTesterLibrary.Helpers;
 global using QuestTesterLibrary.ViewModels;
 global using QuestTesterLibrary.LocatorServices;
+global using AOEOCivilizationLibrary.ApplicationState;

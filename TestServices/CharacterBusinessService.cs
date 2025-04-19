@@ -1,5 +1,5 @@
 ﻿namespace QuestTesterLibrary.TestServices;
-public class CharacterBusinessService(IChooseCivViewModel civChooser,
+public class CharacterBusinessService(ICivilizationContext civilization,
     IAddTechsToCharacterService add
         ) : ICharacterBusinessService //this is still testing.  because otherwise, something else would show the civ info.
 {
@@ -8,11 +8,11 @@ public class CharacterBusinessService(IChooseCivViewModel civChooser,
         //this is where it has to generate the character file.
         //all the techs has to be where it needs to at this point.
         cc1.CleanCharacterFiles();
-        if (civChooser.CivilizationChosen is null)
+        if (civilization.CurrentCivilization is null)
         {
             throw new CustomBasicException("Did not choose a civ");
         }
-        string abb = civChooser.CivilizationChosen.Abbreviation;
+        string abb = civilization.CivAbb;
         string newPath = dd1.NewCharacterLocation(abb); //i think this is fine now.
         string oldPath = abb.GetCharacterPath();
         await ff1.FileCopyAsync(oldPath, newPath);
