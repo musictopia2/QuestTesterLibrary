@@ -1,4 +1,4 @@
-﻿namespace QuestTesterLibrary.LocatorServices;
+﻿namespace QuestTesterLibrary.Services;
 public interface IQuestLocatorService
 {
     string OldQuestPath { get; } //this is where we decide what old quest to play.

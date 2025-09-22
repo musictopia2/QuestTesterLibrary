@@ -1,3 +1,5 @@
+using QuestTesterLibrary.Services;
+
 namespace QuestTesterLibrary.Components;
 public partial class PlayTestSingleQuestComponent
 {

@@ -1,4 +1,4 @@
-﻿using QuestTesterLibrary.LocatorServices;
+﻿using QuestTesterLibrary.Services;
 
 namespace QuestTesterLibrary.Extensions;
 public static class MiscExtensions

@@ -1,6 +1,6 @@
-﻿namespace QuestTesterLibrary.TestServices;
+﻿namespace QuestTesterLibrary.Services;
 public class CharacterBusinessService(ICivilizationContext civilization,
-    IAddTechsToCharacterService add
+    ICharacterFileModifierService add
         ) : ICharacterBusinessService //this is still testing.  because otherwise, something else would show the civ info.
 {
     async Task ICharacterBusinessService.CopyCharacterFilesAsync()
@@ -21,6 +21,6 @@ public class CharacterBusinessService(ICivilizationContext civilization,
         add.Source = source;
         add.Tech = techs;
         add.CharacterPath = newPath;
-        add.AddTechs();
+        add.ModifyCharacterFile();
     }
 }
